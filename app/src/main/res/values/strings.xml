@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Intermediate Submission</string>
+    <string name="action_settings">Action Settings</string>
+    <string name="register_fragment_label">Register Account</string>
+    <string name="login_fragment_label">Login</string>
+    <string name="home_title">Story</string>
+    <string name="login_title">Login</string>
+    <string name="register_title">Register</string>
+    <string name="add_story">Add Story</string>
+
+    <!-- Auth -->
+    <string name="email">Email</string>
+    <string name="name">Nama</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="dont_have_account">Don\'t have account?</string>
+    <string name="already_have_account">Already have account?</string>
+    <string name="register_here">Register here</string>
+    <string name="login_here">Login here</string>
+    <string name="logout">Logout</string>
+    <string name="register_success">Register success</string>
+    <string name="login_success">Login success</string>
+    <string name="logout_success">Logout success</string>
+    <string name="register_failed">Register failed</string>
+    <string name="login_failed">Login failed</string>
+    <string name="logout_failed">Logout failed</string>
+    <string name="email_not_valid">Email not valid</string>
+    <string name="password_not_valid">Password must be at least 8 characters long</string>
+    <string name="field_must_be_filled">Please fill all the field</string>
+
+
+    <!-- Story item -->
+    <string name="story_owner">Story Owner</string>
+    <string name="story_content">Content</string>
+    <string name="story_photo">Photo</string>
+    <string name="longitude_latitude">Longitude : %1$s , Latitude : %2$s</string>
+    <string name="appwidget_text">List Story</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">This is an app widget description</string>
+
+    <!-- Add Story -->
+    <string name="add_story_content">Add your story here</string>
+    <string name="add_story_photo">Add your photo here</string>
+    <string name="add_story_button">Add Story</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+
+    <!-- Error -->
+    <string name="no_data">No data</string>
+    <string name="error">Error</string>
+    <string name="change_language">Change Language</string>
+
+
+</resources>

@@ -1,0 +1,47 @@
+1. Halaman autentikasi - AuthActivity (2 fragment)
+    - Login, email dan password
+    - Register, nama, email, dan password
+    NB : *Custom View : EditText
+        - Password kurang dari 8 karakter akan menampilkan error
+        - Email tidak sesuai regex pattern akan menampilkan error (Saran 2)
+    - Password disembunyikan
+    - SharedPreferences untuk menyimpan token, dan digunakan di interceptor retrofit
+    - Saat masuk ke app, check apakah token tersedia
+        - Apabila tersedia lansung masuk ke Home
+        - Apabila tidak tersedia, maka diarahkan ke Login Page
+    - Fitur untuk logout pada action menu toolbar
+        - Token dihapus, dan user diarahkan ke Login Page
+
+2. Daftar Cerita ( List Story ) - HomeActivity
+    - List story, nama dan foto
+    - Detail story, nama, foto, deskripsi, longitude, latitude, createdAt
+    - Menambahkan loading, dan error pada list, serta detail menggunakan class State (Saran 8)
+ 
+3. Tambah Cerita - AddStoryActivity
+    - Menambahkan foto - Gallery dan Camera (Saran 3)
+    - Menambahkan deskripsi cerita
+    - Tombol untuk upload data ke server
+    - Setelah berhasil, arahkan user kembali ke home, dan refresh list
+    - Saat loading, maka tombol akan di-disable
+    - Saat error, akan dimunculkan toast (Saran 8)
+
+4. Animasi - LoginFragment (fragment_login.xml)
+    - Menerapkan Motion Animation, pada saat pertama kali masuk kedalam aplikasi page Login
+    - Terletak di fragment_login.xml, child MotionLayout : @id/logo (ImageView)
+    - Menerapkan transition animation, pada perpindahan page List -> Detail
+
+
+Saran yang diterapkan:
+- Saran 1, menulis kode dengan bersih (auto format)
+- Saran 2, menerapkan custom view untuk pattern email
+- Saran 3, mengambil gambar melalui kamera
+- Saran 4, aplikasi lansung pindah ketika sudah mendapatkan respon
+- Saran 5, alur aplikasi yang tepat
+- Saran 6, menambahkan stack view widget untuk daftar cerita (sedikit buggy, hanya berjalan saat ditambahkan)
+- Saran 7, terdapat pengaturan untuk localization (multi bahasa)
+    - Terletak pada menu_main.xml, yang terhubung dengan HomeActivity
+- Saran 8, menambahkan informasi selama proses interaksi API
+- Saran 9, menerapkan MVVM pada halaman yang mengandung BLOC
+    - Loading, dan error text pada list, dan detail
+    - Disable button saat loading di login dan register, toast pada saat error
+    - Disable button saat loading add post, dan toast pada error

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Intermediate Submission</string>
+    <string name="action_settings">Pengaturan Tindakan</string>
+    <string name="register_fragment_label">Daftar Akun</string>
+    <string name="login_fragment_label">Masuk</string>
+    <string name="home_title">Cerita</string>
+    <string name="login_title">Masuk</string>
+    <string name="register_title">Daftar</string>
+    <string name="add_story">Tambah Cerita</string>
+
+    <!-- Auth -->
+    <string name="email">Email</string>
+    <string name="name">Nama</string>
+    <string name="password">Kata Sandi</string>
+    <string name="confirm_password">Konfirmasi Kata Sandi</string>
+    <string name="login">Masuk</string>
+    <string name="register">Daftar</string>
+    <string name="dont_have_account">Belum punya akun?</string>
+    <string name="already_have_account">Sudah punya akun?</string>
+    <string name="register_here">Daftar di sini</string>
+    <string name="login_here">Masuk di sini</string>
+    <string name="logout">Keluar</string>
+    <string name="register_success">Pendaftaran akun berhasil</string>
+    <string name="login_success">Berhasil masuk</string>
+    <string name="logout_success">Berhasil keluar</string>
+    <string name="register_failed">Pendaftaran akun gagal</string>
+    <string name="login_failed">Gagal masuk</string>
+    <string name="logout_failed">Gagal keluar</string>
+    <string name="email_not_valid">Email tidak valid</string>
+    <string name="password_not_valid">Password harus terdiri dari setidaknya 8 karakter</string>
+    <string name="field_must_be_filled">Tolong isi semua informasi</string>
+
+    <!-- Story item -->
+    <string name="story_owner">Pemilik Cerita</string>
+    <string name="story_content">Konten</string>
+    <string name="story_photo">Foto</string>
+    <string name="longitude_latitude">Garis Bujur : %1$s , Garis Lintang : %2$s</string>
+    <string name="appwidget_text">Daftar Cerita</string>
+    <string name="add_widget">Tambah widget</string>
+    <string name="app_widget_description">Ini adalah deskripsi widget aplikasi</string>
+
+    <!-- Add Story -->
+    <string name="add_story_content">Tambahkan cerita Anda di sini</string>
+    <string name="add_story_photo">Tambahkan foto Anda di sini</string>
+    <string name="add_story_button">Tambah Cerita</string>
+    <string name="camera">Kamera</string>
+    <string name="gallery">Galeri</string>
+
+    <!-- Error -->
+    <string name="no_data">Tidak ada data</string>
+    <string name="error">Kesalahan</string>
+    <string name="change_language">Ubah Bahasa</string>
+
+</resources>
