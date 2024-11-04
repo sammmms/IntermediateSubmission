@@ -34,6 +34,7 @@ class AddStoryActivity : AppCompatActivity() {
     private lateinit var viewModel: AddStoryViewModel
 
     private var photoUri: Uri? = null
+    private var tempPhotoUri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,12 +57,12 @@ class AddStoryActivity : AppCompatActivity() {
         with(binding) {
             btnCamera.setOnClickListener {
                 val file: File = File.createTempFile("temp", ".jpg", cacheDir)
-                photoUri = FileProvider.getUriForFile(
+                tempPhotoUri = FileProvider.getUriForFile(
                     this@AddStoryActivity,
                     "$packageName.fileprovider",
                     file
                 )
-                cameraLauncher.launch(photoUri!!)
+                cameraLauncher.launch(tempPhotoUri!!)
             }
 
             btnGallery.setOnClickListener {
@@ -85,7 +86,6 @@ class AddStoryActivity : AppCompatActivity() {
 
 
     private fun createStory() {
-        viewModel.isLoading()
         if (photoUri == null) {
             return
         }
@@ -94,6 +94,7 @@ class AddStoryActivity : AppCompatActivity() {
             "AddStoryActivity",
             "createStory: ${file.absolutePath}"
         )
+
         val requestFile = file.asRequestBody("image/jpeg".toMediaType())
         val body = MultipartBody.Part.createFormData("photo", file.name, requestFile)
 
@@ -101,7 +102,7 @@ class AddStoryActivity : AppCompatActivity() {
             binding.edAddDescription.text.toString().toRequestBody("text/plain".toMediaType())
 
         val client = apiService.postStory(description = description, photo = body)
-
+        viewModel.isLoading()
         client.enqueue(object : Callback<DetailStoryResponse> {
             override fun onResponse(
                 call: Call<DetailStoryResponse>,
@@ -109,19 +110,18 @@ class AddStoryActivity : AppCompatActivity() {
             ) {
                 if (response.isSuccessful) {
                     showToast("Story created")
-                    viewModel.initialState()
                     finish()
                 } else {
                     showToast("Failed to create story")
-                    viewModel.hasError()
                 }
+                viewModel.initialState()
 
             }
 
             override fun onFailure(call: Call<DetailStoryResponse>, t: Throwable) {
                 Log.e("AddStoryActivity", "onFailure: ${t.message}")
                 showToast("Failed to create story")
-                viewModel.hasError()
+                viewModel.initialState()
             }
         })
     }
@@ -135,11 +135,10 @@ class AddStoryActivity : AppCompatActivity() {
 
     private fun setCameraLauncher() {
         cameraLauncher =
-            registerForActivityResult(ActivityResultContracts.TakePicture()) { isSuccess ->
-                if (isSuccess) {
-                    binding.ivAddPhoto.setImageURI(photoUri)
-                } else {
-                    photoUri = null
+            registerForActivityResult(ActivityResultContracts.TakePicture()) {
+                if (it) {
+                    photoUri = tempPhotoUri
+                    binding.ivAddPhoto.setImageURI(tempPhotoUri)
                 }
             }
     }

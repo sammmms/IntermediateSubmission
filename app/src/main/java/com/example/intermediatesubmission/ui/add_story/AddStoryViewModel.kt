@@ -12,10 +12,6 @@ class AddStoryViewModel : ViewModel() {
         _state.postValue(State(isLoading = true))
     }
 
-    fun hasError() {
-        _state.postValue(State(hasError = true))
-    }
-
     fun initialState() {
         _state.postValue(State())
     }
