@@ -45,3 +45,6 @@ Saran yang diterapkan:
     - Loading, dan error text pada list, dan detail
     - Disable button saat loading di login dan register, toast pada saat error
     - Disable button saat loading add post, dan toast pada error
+
+FIX:
+- Loading state saat gambar null, return tanpa mengubah state loading
